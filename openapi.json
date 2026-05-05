@@ -2870,7 +2870,7 @@
   "openapi": "3.2.0",
   "servers": [
     {
-      "url": "https://{subdomain}.{baseDomain}/v2.0",
+      "url": "https://{subdomain}.{baseDomain}/v2",
       "description": "ZenPay API",
       "variables": {
         "subdomain": {
