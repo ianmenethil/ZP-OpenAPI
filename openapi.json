@@ -193,7 +193,7 @@
           "description": "Collection of batch payment entries inside a container required to create a batch payment.",
           "required": true
         },
-        "description": "Creates a batch payment from the supplied request payload."
+        "description": "Creates a batch payment from the supplied request payload"
       }
     },
     "/v2/cardproxies/{cardProxy}": {
@@ -5308,6 +5308,10 @@
             "description": "Unique customer code if the customer exists in the system.",
             "type": "string",
             "title": "Customer Code"
+          },
+          "additionalData": {
+            "$ref": "#/components/schemas/PaymentAdditionalData",
+            "description": "Additional transaction data (Conditional)"
           }
         },
         "type": "object",
@@ -5393,6 +5397,23 @@
         "type": "object",
         "description": "Refund or recall transaction details including date, fees, amount, reason, and status.",
         "title": "Sub Payment"
+      },
+      "PaymentAdditionalData": {
+        "properties": {
+          "authCode": {
+            "description": "Processor authorization code. (Conditional)",
+            "type": "string"
+          },
+          "rrn": {
+            "description": "Retrieval reference number. (Conditional)",
+            "type": "string"
+          },
+          "stan": {
+            "description": "System trace audit number. (Conditional)",
+            "type": "string"
+          }
+        },
+        "type": "object"
       },
       "RefundResponse": {
         "description": "Refund request response including status and refund reference.",
